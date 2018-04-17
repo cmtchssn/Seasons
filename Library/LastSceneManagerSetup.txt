@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/05thDraft.008.unity
+- path: Assets/Scenes/currentScenes/05thDraft.018.unity
   isLoaded: 1
   isActive: 1

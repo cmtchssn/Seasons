@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Boulders
+  - Pick Up
+  - Inventory
+  - Enemy
+  - Pillars
   layers:
   - Default
   - TransparentFX
@@ -15,7 +19,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - NPC
   - 
   - 
   - 
