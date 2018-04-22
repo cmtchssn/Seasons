@@ -83,7 +83,7 @@ public class NPC_AI : MonoBehaviour
 		nav.speed = patrolSpeed;
 
 		// If near the next waypoint
-		if (nav.remainingDistance < nav.stoppingDistance + 0.1f) {
+		if (nav.remainingDistance < nav.stoppingDistance) {
 			// ... increment the timer.
 			patrolTimer += Time.deltaTime;
 			

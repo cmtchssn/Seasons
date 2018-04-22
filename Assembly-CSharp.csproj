@@ -115,8 +115,10 @@
      <Compile Include="Assets\Scripts\LocomotionKen_402.cs" />
      <Compile Include="Assets\Scripts\NPC_AI.cs" />
      <Compile Include="Assets\Scripts\pickupScript.cs" />
-     <Compile Include="Assets\Scripts\pillar06fallScript.cs" />
-     <Compile Include="Assets\Scripts\pillarFallingScript.cs" />
+     <Compile Include="Assets\Scripts\pillars\pillar06fallScript.cs" />
+     <Compile Include="Assets\Scripts\pillars\pillar07fallScript.cs" />
+     <Compile Include="Assets\Scripts\pillars\pillar09fallScript.cs" />
+     <Compile Include="Assets\Scripts\pillars\pillarFallingScript.cs" />
      <Compile Include="Assets\Scripts\reduceHealthCollision.cs" />
      <None Include="Assets\ProCore\ProGrids\Shader\pg_GridShader.shader" />
      <None Include="Assets\ProCore\Polybrush\Shader\z_TriPlanarBlend_SfSrc.shader" />

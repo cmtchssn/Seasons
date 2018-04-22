@@ -19,7 +19,7 @@ public class damageScript : MonoBehaviour {
 	public float flashSpeed = 5f;
 	public Color flashColor = new Color (1f, 0f, 0, 0.1f);
 
-	private AudioSource playerAudio;
+	//private AudioSource playerAudio;
 
 	bool damaged;
 	bool isDead;
@@ -34,21 +34,28 @@ public class damageScript : MonoBehaviour {
 	public float destroyParticlesSeconds = 2.0f;
 
 	private float collisionCheckCountdown = 0.0f;
-	private Animator anim;
-	private AudioSource audioSource;
+	//private Animator anim;
+	//private AudioSource audioSource;
 	//private int playerHealth;
 
 
 	void Start () {
+		gameOverText.gameObject.SetActive (false);
+		currentHealth = startingHealth;
+
 		healthHeart01 = GetComponent<Image> ();
 		healthHeart02 = GetComponent<Image> ();
 		healthHeart03 = GetComponent<Image> ();
-		gameOverText.gameObject.SetActive (false);
-		playerAudio = GetComponent <AudioSource> ();
-		currentHealth = startingHealth;
+		/*
+		fullHeart = Resources.Load<Sprite> ("heartFull");
+		emptyHeart = Resources.Load<Sprite> ("heartEmpty");
+		*/
+
+		//playerAudio = GetComponent <AudioSource> ();
+
 		//ken's script 
-		audioSource = GetComponent<AudioSource>();
-		anim = GetComponent<Animator> ();
+		//audioSource = GetComponent<AudioSource>();
+		//anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -95,6 +102,7 @@ public class damageScript : MonoBehaviour {
 		{
 			if (otherLayer == NPCLayer )
 			{
+				TakeDamage (1);
 				collisionCheckCountdown = waitBetweenHits;
 
 				foreach (ContactPoint contact in other.contacts) 
@@ -103,8 +111,8 @@ public class damageScript : MonoBehaviour {
 					Destroy (thisInstance, destroyParticlesSeconds);
 				}
 
-				audioSource.Play();
-				TakeDamage (1);
+				//audioSource.Play();
+
 			}
 		}
 
@@ -118,7 +126,30 @@ public class damageScript : MonoBehaviour {
 
 		// Reduce the current health by the damage amount.
 		currentHealth -= amount;
-		Heart ();
+		Debug.Log (currentHealth);
+		//Heart ();
+		if (currentHealth == 3) {
+			healthHeart01.sprite = fullHeart;
+			healthHeart02.sprite = fullHeart;
+			healthHeart03.sprite = fullHeart;
+		}
+		if (currentHealth == 2) {
+			healthHeart01.sprite = emptyHeart;
+			healthHeart02.sprite = fullHeart;
+			healthHeart03.sprite = fullHeart;
+		}
+
+		if (currentHealth == 1) {
+			healthHeart01.sprite = emptyHeart;
+			healthHeart02.sprite = emptyHeart;
+			healthHeart03.sprite = fullHeart;
+		}
+
+		if (currentHealth == 0) {
+			healthHeart01.sprite = emptyHeart;
+			healthHeart02.sprite = emptyHeart;
+			healthHeart03.sprite = emptyHeart;
+		}
 
 		// Play the hurt sound effect.
 		//playerAudio.Play ();
@@ -147,15 +178,14 @@ public class damageScript : MonoBehaviour {
 		//playerMovement.enabled = false;
 	}  
 
-
-	void Heart ()
+	/*
+	public void Heart ()
 	{
 		if (currentHealth == 3) {
 			healthHeart01.sprite = fullHeart;
 			healthHeart02.sprite = fullHeart;
 			healthHeart03.sprite = fullHeart;
 		}
-
 		if (currentHealth == 2) {
 			healthHeart01.sprite = emptyHeart;
 			healthHeart02.sprite = fullHeart;
@@ -174,4 +204,5 @@ public class damageScript : MonoBehaviour {
 			healthHeart03.sprite = emptyHeart;
 		}
 	}
+	*/
 }

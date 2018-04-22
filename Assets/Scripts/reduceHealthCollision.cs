@@ -10,9 +10,12 @@ public int NPCLayer = 9;
 // public float minHitVelocity = 3.0f;
 // public float yHitVelocity = -.2f;
 
-public int healthPoints = 10;
-public string healthTextString = "Health";
-public Text healthText;
+public int healthPoints = 3;
+public Image healthHeart01;
+public Image healthHeart02;
+public Image healthHeart03;
+public Sprite emptyHeart;
+public Sprite fullHeart;
 public Text gameOverText;
 
 public float waitBetweenHits = 1.0f;
@@ -31,7 +34,7 @@ private AudioSource audioSource;
 void Start () 
 	{
 	audioSource = GetComponent<AudioSource>();
-	healthText.text = healthTextString + " " + healthPoints.ToString();
+	//healthText.text = healthTextString + " " + healthPoints.ToString();
 	anim = GetComponent<Animator> ();
 	}
 
@@ -68,7 +71,7 @@ void OnCollisionEnter( Collision other )
 
         	audioSource.Play();
 			healthPoints--;
-			healthText.text = healthTextString + " " + healthPoints.ToString();
+			//healthText.text = healthTextString + " " + healthPoints.ToString();
 
 			if ( healthPoints < 1 )
 				{
@@ -76,7 +79,7 @@ void OnCollisionEnter( Collision other )
 
 				gameOverText.gameObject.SetActive( true );
 
-				healthText.gameObject.SetActive (false);
+				//healthText.gameObject.SetActive (false);
 				}
 			}
 		}
