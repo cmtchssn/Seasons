@@ -8,6 +8,7 @@ public class altarDoorScript : MonoBehaviour {
 	public GameObject pickup01;
 	public GameObject pickup02;
 	public GameObject pickup03;
+	public int items;
 
 	private Animator anim;
 
@@ -23,6 +24,7 @@ public class altarDoorScript : MonoBehaviour {
 			Debug.Log ("Player is in Altar Trigger.");
 			if(!pickup01.gameObject.activeSelf && !pickup02.gameObject.activeSelf && !pickup03.gameObject.activeSelf) {
 				Debug.Log ("all pickups are inactive");
+				items = 3;
 				anim.SetBool ("fall", true);
 				anim.SetBool ("down", true);
 				//altarDoor.gameObject.SetActive (false);

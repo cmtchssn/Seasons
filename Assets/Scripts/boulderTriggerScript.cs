@@ -11,8 +11,10 @@ public class boulderTriggerScript : MonoBehaviour {
 		boulders.SetActive (false);
 	}
 
-	private void OnTriggerEnter()
+	private void OnTriggerEnter(Collider other)
 	{
-		boulders.SetActive (true);
+		if(other.gameObject.CompareTag ("Player")) {
+			boulders.SetActive (true);
+		}
 	}
 }

@@ -40,16 +40,8 @@ public class damageScript : MonoBehaviour {
 
 
 	void Start () {
-		gameOverText.gameObject.SetActive (false);
+		//gameOverText.gameObject.SetActive (false);
 		currentHealth = startingHealth;
-
-		healthHeart01 = GetComponent<Image> ();
-		healthHeart02 = GetComponent<Image> ();
-		healthHeart03 = GetComponent<Image> ();
-		/*
-		fullHeart = Resources.Load<Sprite> ("heartFull");
-		emptyHeart = Resources.Load<Sprite> ("heartEmpty");
-		*/
 
 		//playerAudio = GetComponent <AudioSource> ();
 
@@ -127,29 +119,7 @@ public class damageScript : MonoBehaviour {
 		// Reduce the current health by the damage amount.
 		currentHealth -= amount;
 		Debug.Log (currentHealth);
-		//Heart ();
-		if (currentHealth == 3) {
-			healthHeart01.sprite = fullHeart;
-			healthHeart02.sprite = fullHeart;
-			healthHeart03.sprite = fullHeart;
-		}
-		if (currentHealth == 2) {
-			healthHeart01.sprite = emptyHeart;
-			healthHeart02.sprite = fullHeart;
-			healthHeart03.sprite = fullHeart;
-		}
-
-		if (currentHealth == 1) {
-			healthHeart01.sprite = emptyHeart;
-			healthHeart02.sprite = emptyHeart;
-			healthHeart03.sprite = fullHeart;
-		}
-
-		if (currentHealth == 0) {
-			healthHeart01.sprite = emptyHeart;
-			healthHeart02.sprite = emptyHeart;
-			healthHeart03.sprite = emptyHeart;
-		}
+		Heart ();
 
 		// Play the hurt sound effect.
 		//playerAudio.Play ();
@@ -157,6 +127,7 @@ public class damageScript : MonoBehaviour {
 		// If the player has lost all it's health and the death flag hasn't been set yet...
 		if(currentHealth <= 0 && !isDead)
 		{
+			Debug.Log ("currentHealth <= 0 && !isDead, ");
 			// ... it should die.
 			Death ();
 		}
@@ -168,41 +139,45 @@ public class damageScript : MonoBehaviour {
 		// Set the death flag so this function won't be called again.
 		isDead = true;
 
+		Debug.Log ("SetTrigger Called");
+
 		// Set the audiosource to play the death clip and play it (this will stop the hurt sound from playing).
 		//playerAudio.clip = deathClip;
 		//playerAudio.Play ();
 
-		gameOverText.gameObject.SetActive (true);
+		//gameOverText.gameObject.SetActive (true);
 
 		// Turn off the movement and shooting scripts.
 		//playerMovement.enabled = false;
 	}  
 
-	/*
+
 	public void Heart ()
 	{
 		if (currentHealth == 3) {
-			healthHeart01.sprite = fullHeart;
-			healthHeart02.sprite = fullHeart;
-			healthHeart03.sprite = fullHeart;
+			Debug.Log ("currentHealth == 3");
 		}
+
 		if (currentHealth == 2) {
+			Debug.Log ("currentHealth == 2");
 			healthHeart01.sprite = emptyHeart;
 			healthHeart02.sprite = fullHeart;
 			healthHeart03.sprite = fullHeart;
 		}
 
 		if (currentHealth == 1) {
+			Debug.Log ("currentHealth == 1");
 			healthHeart01.sprite = emptyHeart;
 			healthHeart02.sprite = emptyHeart;
 			healthHeart03.sprite = fullHeart;
 		}
 
 		if (currentHealth == 0) {
+			Debug.Log ("currentHealth == 0");
 			healthHeart01.sprite = emptyHeart;
 			healthHeart02.sprite = emptyHeart;
 			healthHeart03.sprite = emptyHeart;
 		}
 	}
-	*/
+
 }

@@ -51,7 +51,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\altarOfferingScript.cs" />
+     <Compile Include="Assets\Game Jam Template\Scripts\DontDestroy.cs" />
+     <Compile Include="Assets\Game Jam Template\Scripts\EventSystemChecker.cs" />
+     <Compile Include="Assets\Game Jam Template\Scripts\Pause.cs" />
+     <Compile Include="Assets\Game Jam Template\Scripts\PlayMusic.cs" />
+     <Compile Include="Assets\Game Jam Template\Scripts\QuitApplication.cs" />
+     <Compile Include="Assets\Game Jam Template\Scripts\SetAudioLevels.cs" />
+     <Compile Include="Assets\Game Jam Template\Scripts\ShowPanels.cs" />
+     <Compile Include="Assets\Game Jam Template\Scripts\StartOptions.cs" />
      <Compile Include="Assets\Prefabs\Mummy\C#\Axe.cs" />
      <Compile Include="Assets\Prefabs\Mummy\C#\BaseAnimController.cs" />
      <Compile Include="Assets\Prefabs\Mummy\C#\CameraController.cs" />
@@ -110,9 +117,11 @@
      <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
      <Compile Include="Assets\Scripts\altarDoorScript.cs" />
+     <Compile Include="Assets\Scripts\altarOfferingScript.cs" />
      <Compile Include="Assets\Scripts\boulderNavigation.cs" />
      <Compile Include="Assets\Scripts\boulderTriggerScript.cs" />
      <Compile Include="Assets\Scripts\damageScript.cs" />
+     <Compile Include="Assets\Scripts\gameOverScript.cs" />
      <Compile Include="Assets\Scripts\LocomotionKen_402.cs" />
      <Compile Include="Assets\Scripts\NPC_AI.cs" />
      <Compile Include="Assets\Scripts\pickupScript.cs" />
@@ -121,6 +130,7 @@
      <Compile Include="Assets\Scripts\pillars\pillar09fallScript.cs" />
      <Compile Include="Assets\Scripts\pillars\pillarFallingScript.cs" />
      <Compile Include="Assets\Scripts\reduceHealthCollision.cs" />
+     <Compile Include="Assets\Scripts\winnerScript.cs" />
      <Compile Include="Assets\WorldSkies\Demo\Scripts\LookCamera.cs" />
      <Compile Include="Assets\WorldSkies\Demo\Scripts\SkyboxChanger.cs" />
      <None Include="Assets\ProCore\ProGrids\Shader\pg_GridShader.shader" />
@@ -172,6 +182,7 @@
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_ScrollHighlight.shader" />
      <None Include="Assets\ProCore\Polybrush\Shader\z_TriPlanarBlend.shader" />
      <None Include="Assets\ProCore\ProBuilder\readme.txt" />
+     <None Include="Assets\Game Jam Template\GameJamTemplateReadMe.txt" />
      <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendWithVertexColor_SfSrc.shader" />
      <None Include="Assets\ProCore\Polybrush\Shader\z_Overlay.shader" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_SmoothingPreview.shader" />
