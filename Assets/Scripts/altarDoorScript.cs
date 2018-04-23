@@ -9,9 +9,13 @@ public class altarDoorScript : MonoBehaviour {
 	public GameObject pickup02;
 	public GameObject pickup03;
 
+	private Animator anim;
+
 	// Use this for initialization
 	void Start () {
 		altarDoor.gameObject.SetActive (true);
+		anim = altarDoor.GetComponent<Animator> ();
+		anim.SetBool ("up", true);
 	}
 
 	void OnTriggerEnter(Collider other) {
@@ -19,7 +23,9 @@ public class altarDoorScript : MonoBehaviour {
 			Debug.Log ("Player is in Altar Trigger.");
 			if(!pickup01.gameObject.activeSelf && !pickup02.gameObject.activeSelf && !pickup03.gameObject.activeSelf) {
 				Debug.Log ("all pickups are inactive");
-				altarDoor.gameObject.SetActive (false);
+				anim.SetBool ("fall", true);
+				anim.SetBool ("down", true);
+				//altarDoor.gameObject.SetActive (false);
 			} else {
 				Debug.Log("Requirements not met.");
 			}
