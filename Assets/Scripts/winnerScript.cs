@@ -24,7 +24,7 @@ public class winnerScript : MonoBehaviour {
 			restartTimer += Time.deltaTime;
 
 			if (restartTimer >= restartDelay) {
-				SceneManager.LoadScene ("05thDraft.025");
+				SceneManager.LoadScene ("05thDraft.026");
 				Debug.Log("reload level here");
 			}
 		}
