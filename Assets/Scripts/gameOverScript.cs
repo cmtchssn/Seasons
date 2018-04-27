@@ -24,7 +24,7 @@ public class gameOverScript : MonoBehaviour {
 			restartTimer += Time.deltaTime;
 
 			if (restartTimer >= restartDelay) {
-				SceneManager.LoadScene ("05thDraft.026");
+				SceneManager.LoadScene ("05thDraft.027");
 				Debug.Log("reload level here");
 			}
 		}
